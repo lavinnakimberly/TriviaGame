@@ -1,0 +1,11 @@
+#timerContainer {
+	display: none;
+}
+
+#questionContainer {
+	display: none;
+}
+
+.answers {
+	background-color: blue;
+}

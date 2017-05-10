@@ -1,0 +1,58 @@
+{"questions": [
+	{"questionNumber" : 1,
+		"questionText" : "What is Britney Spears' first song?",
+		"possibleAnswers": [
+			"Oops I Did it Again",
+				"Toxic",
+				"Baby One More Time",
+				"You Drive Me Crazy"
+			
+		],
+		"correctAnswer": 3
+	},
+	{"questionNumber" : 2,
+		"questionText" : "Which basketball player was in Space Jam?",
+		"possibleAnswers": [
+			"Scotty Pippen",
+				"Michael Jordan",
+				"Dennis Rodman",
+				"Kobe Bryant"
+			
+		],
+		"correctAnswer": 2
+	},
+	{"questionNumber" : 3,
+		"questionText" : "What was Tommy's last name in Rugrats?",
+		"possibleAnswers": [
+			"Pickles",
+				"DeVille",
+				"Finster",
+				"Smith"
+			
+		],
+		"correctAnswer": 1
+	},
+	{"questionNumber" : 4,
+		"questionText" : "Who wrote the book series Goosebumps?",
+		"possibleAnswers": [
+			"J.K. Rowling",
+				"Lois Lowry",
+				"Dav Pilkey",
+				"R.L. Stine"
+			
+		],
+		"correctAnswer": 4
+	},
+	{"questionNumber" : 5,
+		"questionText" : "This game featured 3 inputs -Bop it, twist it,___?",
+		"possibleAnswers": [
+			"Yank It",
+				"Squeeze It",
+				"Pull It",
+				"Push It"
+			
+		],
+		"correctAnswer": 3
+	}
+	
+]}

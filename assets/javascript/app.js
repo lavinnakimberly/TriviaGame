@@ -14,7 +14,7 @@ $(document).ready(function(){
 			questionNumber++;
 			console.log("correct")
 			$("#question").empty();
-			$(".answerListContainer").empty();
+			$(".answersListContainer").empty();
 			displayQuestion(questionNumber);
 		}
 		else {

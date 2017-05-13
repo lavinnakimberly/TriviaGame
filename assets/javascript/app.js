@@ -1,23 +1,25 @@
 $(document).ready(function(){
-	//Initialize screen by hiding timer and question containers
-//	$("#timerContainer").toggle();
-//	$("#questionContainer").toggle();
-	var correctAnswer
-	//Start Game
+	
+	var questionNumber = 0;
+	
 	$("#startGame").on("click", function(){
 		startGame();
 	})
 	$(".answersListContainer").on("click", function(){
 		var selectedAnswer = $(this).children().attr("data-answer");
 		console.log(selectedAnswer);
-		correctAnswer = $("#hideAnswer").val();
+		var correctAnswer = $("#hideAnswer").val();
 
 		if (selectedAnswer == correctAnswer){
-			console.log("Yay")
+			questionNumber++;
+			console.log("correct")
+			$("#question").empty();
+			$(".answerListContainer").empty();
+			displayQuestion(questionNumber);
 		}
 
 		else {
-			console.log("nay")
+			console.log("incorrect")
 		}
 
 
@@ -68,18 +70,23 @@ function countDown(option, countdownTime) {
 	}
 }
 
-function displayQuestion() {
+function displayQuestion(questionNumber) {
 	//Get Question
+	var questionNumber = questionNumber;
 	$.ajax({
 		type: "GET",
 		url: "assets/javascript/questions.json"
 	}).done(function(response){
 		myQuestion = response;
-		console.log(myQuestion)
-		var questionText = myQuestion.questions[0].questionText;
+		var questionText = myQuestion.questions[questionNumber].questionText;
+		console.log(questionText)
+		if ($("#questionContainer").not(":visible")) {
+			$("#answersContainer").show();
+		}
+		if ($("#answersContainer").not(":visible")) {
+			$("#answersContainer").toggle();
+		}
 
-		$("#questionContainer").toggle();
-		$("#answersContainer").toggle();
 		$("#question").text(questionText);
 
 
@@ -93,7 +100,7 @@ function displayQuestion() {
 			answerList.append(answerItem)
 		}
 
-		correctAnswer = myQuestion.questions[0].correctAnswer
+		var correctAnswer = myQuestion.questions[questionNumber].correctAnswer
 		$("#hideAnswer").val(correctAnswer);
 	});
 }

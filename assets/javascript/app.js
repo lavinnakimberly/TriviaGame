@@ -34,7 +34,7 @@ function startGame(){
 
 	setTimeout(function(){
 		countDown("stop");
-		displayQuestion();
+		displayQuestion(0);
 		countDown("start", 10);
 		setTimeout(function(){
 			countDown("stop");

@@ -17,18 +17,14 @@ $(document).ready(function(){
 			$(".answerListContainer").empty();
 			displayQuestion(questionNumber);
 		}
-
 		else {
 			console.log("incorrect")
 		}
-
-
 	})
 })
 
 function startGame(){
 	var questions;
-
 	//Start countdown
 	countDown("start", 3);
 
@@ -81,7 +77,7 @@ function displayQuestion(questionNumber) {
 		var questionText = myQuestion.questions[questionNumber].questionText;
 		console.log(questionText)
 		if ($("#questionContainer").not(":visible")) {
-			$("#answersContainer").show();
+			$("#questionContainer").show();
 		}
 		if ($("#answersContainer").not(":visible")) {
 			$("#answersContainer").toggle();
@@ -90,11 +86,11 @@ function displayQuestion(questionNumber) {
 		$("#question").text(questionText);
 
 
-		for (var i = 0; i < myQuestion.questions[0].possibleAnswers.length; i++){
+		for (var i = 0; i < myQuestion.questions[questionNumber].possibleAnswers.length; i++){
 			j = i+1
 			var answerList = $("#al" + j);
 			console.log(answerList);
-			answerItem = $("<li>" + myQuestion.questions[0].possibleAnswers[i] + "</li>");
+			answerItem = $("<li>" + myQuestion.questions[questionNumber].possibleAnswers[i] + "</li>");
 			answerItem.attr("data-answer", i+1);
 			answerItem.addClass("answers");
 			answerList.append(answerItem)
